@@ -1,0 +1,30 @@
+<table style="width: 100%;" class="text-center table">
+     <tr>
+          <th>Hình ảnh sản phẩm</th>
+          <th>Tên sản phẩm</th>
+          <th>Giá</th>
+          <th>Số Lượng</th>
+          <th>Thành tiền</th>
+          <th></th>
+     </tr>
+     <!-- dùng ngFor duyệt qua mảng -->
+     <tr *ngFor=" let item of cartList;let i=index">
+          <td><img src="{{item.imageUrl}}" style="height: 100px;width: 100px;"></td>
+          <td class="align-middle"> {{item.productName}}</td>
+          <td class="align-middle">{{item.price | currency:'VND':'':'1.0-0'}} VNĐ</td>
+          <td class="align-middle">{{item.quantity}}</td>
+          <td class="align-middle">{{item.price! * item.quantity!| currency:'VND':'':'1.0-0'}} VNĐ</td>
+          <td class="align-middle">
+               <button class="btn btn-danger" (click)="Remove(item.id)">Xóa</button>
+          </td>
+     </tr>
+     <tr>
+          <th colspan="2"></th>
+          <th>Tổng tiền:</th>
+          <th class="text-success">{{itemCount}}</th>
+          <th class="text-danger">{{ itemSum | currency:'VND':'':'1.0-0'}} VNĐ</th>
+          <th>
+               <button class="btn btn-danger" (click)="DeleteAll()">Xóa Tất Cả</button>
+          </th>
+     </tr>
+</table>

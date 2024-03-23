@@ -1,0 +1,37 @@
+<!-- <div class="row">
+     <div class="col-lg-4" *ngFor="let item of productHome">
+          <div class="card-deck mt-3">
+               <div class="card">
+                    <img class="card-img-top p-3" src="{{item.imageUrl}}" width="100%" height="250px" alt="">
+                    <div class="card-body text-center">
+                         <h4 class="card-title">{{item.productName}}</h4>
+                         <p class="card-text">{{item.price}}</p>
+                         <p class="card-text">Tồn kho: {{ item.inStock }}</p>
+                         <button type="button" class="btn btn-primary"
+                              [routerLink]="['/product-details', item.id]">Xem</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div> -->
+
+
+
+<div class="container">
+     <div class="row">
+          <div class="col-lg-4" *ngFor="let item of productHome">
+               <div class="card mt-3">
+                    <img class="card-img-top p-3" src="{{item.imageUrl}}" width="100%" height="400px" alt="">
+                    <div class="card-body text-center">
+                         <h4 class="card-title">{{item.productName}}</h4>
+                         <p class="card-text">Giá: <span class="text-danger"><b>{{ item.price |
+                                        currency:'VND':'':'1.0-0' }} VNĐ</b></span></p>
+                         <p class="card-text">Còn Lại: <span class="text-warning"><b>{{ item.inStock }} KG</b></span>
+                         </p>
+                         <button type="button" class="btn btn-primary"
+                              [routerLink]="['/product-details', item.id]">Xem</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

@@ -1,0 +1,119 @@
+{
+  "products": [
+    {
+      "productName": "Dâu Tây",
+      "productCode": "DT-01",
+      "releaseDate": "2024-03-05",
+      "price": 120000,
+      "inStock": 100,
+      "description": "DÂU TÂY HÀN QUỐC có kích thước trái lớn, màu đỏ tươi. Quả mọng và rất ngọt. Dâu Hàn Quốc có ngoài hình bắt mắt, vị ngọt thanh nên rất được ưa chuộng ở Việt Nam. Dâu tây  Hàn Quốc được xem như là “nữ hoàng trái cây” của xứ sở Kim Chi.",
+      "starRating": 4,
+      "imageUrl": "./assets/images/product-img-1.jpg",
+      "id": "656e"
+    },
+    {
+      "id": "b4bf",
+      "productName": "Chanh Vàng",
+      "productCode": "CV-02",
+      "releaseDate": "2024-03-06",
+      "price": 30000,
+      "inStock": 40,
+      "description": "Chanh vàng có chứa nhiều vitamin,  đặc biệt là vitamin C - là chất chống oxy hóa mạnh, giúp ngăn ngừa ung thư và nhiều căn bệnh nguy hiểm khác. ",
+      "starRating": 4,
+      "imageUrl": "./assets/images/product-img-3.jpg"
+    },
+    {
+      "id": "1055",
+      "productName": "Kiwi",
+      "productCode": "KW-03",
+      "releaseDate": "2024-02-29",
+      "price": 200000,
+      "inStock": 20,
+      "description": "Kiwi có tính thanh mát, chứa rất nhiều dinh dưỡng như vitamin C, vitamin E và vitamin K, folate và potassium. Ngoài ra, còn có nhiều chất chống oxy hóa và chất xơ.",
+      "starRating": 5,
+      "imageUrl": "./assets/images/product-img-4.jpg"
+    },
+    {
+      "id": "924a",
+      "productName": "Táo Xanh",
+      "productCode": "TX-04",
+      "releaseDate": "2024-03-05",
+      "price": 50000,
+      "inStock": 200,
+      "description": "Táo không chỉ chứa các chất dinh dưỡng cần thiết cho não như đường, vitamin, khoáng chất mà quan trọng hơn là chứa một lượng lớn nguyên tố kẽm. Kẽm là nguyên tố không thể thiếu đối với cơ thể, kẽm có quan hệ mật thiết với acid nucleic, protein để làm tăng khả năng ghi nhớ của não người. ",
+      "starRating": 4,
+      "imageUrl": "./assets/images/product-img-5.jpg"
+    },
+    {
+      "productName": "Mân Xôi",
+      "productCode": "MX-05",
+      "releaseDate": "2024-03-01",
+      "price": 200000,
+      "inStock": 20,
+      "description": "Quả mâm xôi tươi ngon giàu vitamin và dưỡng chất có vị hấp dẫn riêng biệt, có thể dùng làm bánh hoặc ăn kèm với",
+      "starRating": 5,
+      "imageUrl": "./assets/images/product-img-6.jpg",
+      "id": "64c9"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@itc.edu.vn",
+      "password": "123456789"
+    },
+    {
+      "email": "Hauadmin@gmail.com",
+      "password": "1234567890",
+      "id": "b513"
+    },
+    {
+      "id": "090c",
+      "email": "huynhthuchau@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "5330",
+      "email": "hauangular@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "233d",
+      "email": "huynhthuchau100204@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "email": "huynhthuchau7749@gmail.com",
+      "password": "123456789000",
+      "id": "7cfb"
+    }
+  ],
+  "carts": [
+    {
+      "userId": "233d",
+      "productId": "b4bf",
+      "productName": "Chanh Vàng",
+      "productCode": "CV-02",
+      "releaseDate": "2024-03-06",
+      "price": 30000,
+      "description": "Chanh vàng có chứa nhiều vitamin,  đặc biệt là vitamin C - là chất chống oxy hóa mạnh, giúp ngăn ngừa ung thư và nhiều căn bệnh nguy hiểm khác. ",
+      "starRating": 4,
+      "imageUrl": "./assets/images/product-img-3.jpg",
+      "quantity": 2,
+      "id": "0d1d"
+    },
+    {
+      "userId": "233d",
+      "productId": "656e",
+      "productName": "Dâu Tây",
+      "productCode": "DT-01",
+      "releaseDate": "2024-03-05",
+      "price": 120000,
+      "description": "DÂU TÂY HÀN QUỐC có kích thước trái lớn, màu đỏ tươi. Quả mọng và rất ngọt. Dâu Hàn Quốc có ngoài hình bắt mắt, vị ngọt thanh nên rất được ưa chuộng ở Việt Nam. Dâu tây  Hàn Quốc được xem như là “nữ hoàng trái cây” của xứ sở Kim Chi.",
+      "starRating": 4,
+      "imageUrl": "./assets/images/product-img-1.jpg",
+      "quantity": 4,
+      "id": "f26d"
+    }
+  ]
+}

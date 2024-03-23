@@ -1,0 +1,78 @@
+/* Adjust the padding-top value to match the height of your navbar */
+footer {
+    background: #000000D9;
+    padding-top: 34px;
+    padding-bottom: 54px;
+}
+
+.footer_title {
+    font-family: 'SF Pro Text';
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.footer_linklists {
+    padding: 0;
+    margin: 0;
+}
+
+.footer_linklists li a {
+    color: #fff;
+    line-height: 20px;
+    font-family: 'Lato', sans-serif;
+}
+
+.footer_linklists a {
+    text-decoration: none;
+    color: #191919;
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+.hotline_footer p {
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.address_footer {
+    margin-top: 30px;
+}
+
+.address_footer p {
+    color: #fff;
+    line-height: 20px;
+    margin: 0;
+    font-size: 12px;
+}
+
+.tch_social_links {
+    display: flex;
+    padding: 0;
+    margin-top: 18px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.footer_itemlists {
+    padding: 0;
+    margin: 0;
+}
+
+.footer_itemlists li {
+    font-size: 12px;
+    color: #fff;
+    line-height: 18px;
+    font-family: 'Lato', sans-serif;
+}

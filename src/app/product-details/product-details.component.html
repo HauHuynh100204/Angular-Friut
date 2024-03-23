@@ -1,0 +1,49 @@
+<h1 class="text-center">Thông tin chi tiết sản phẩm</h1>
+<div class="row">
+    <!-- <div class="col-md-4 p-4 text-center ">
+        <img [src]="productDetail?.imageUrl" width="50%" alt="">
+    </div> -->
+    <div class="col-md-4 p-4 text-center">
+        <img [src]="productDetail?.imageUrl" class="img-fluid" alt="Product Image">
+    </div>
+    <div class="col-md-5 pt-4">
+        <h2>{{productDetail?.productName}}</h2>
+        <h4 class="text-danger">Giá : {{ productDetail?.price | currency:'VND':'':'1.0-0' }} VNĐ</h4>
+        <div class="text-justify">
+            <h5>Mã số: {{productDetail?.productCode}}</h5>
+        </div>
+        <h5>Ngày xuất bán: {{ productDetail?.releaseDate | date:'dd/MM/yyyy' }}</h5>
+        <h5>Mô tả sản phẩm: {{ productDetail?.description}}</h5>
+        <h4>Số lượng tồn: <span class="text-warning">{{ productDetail?.inStock }} KG</span></h4>
+        <div class="d-flex">
+            <h5 class="pe-2">Đánh giá: </h5>
+            <div class="crop" [style.width.px]="(productDetail?.starRating!*90)/5">
+                <div style="width: 90px; color: yellow;">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" [disabled]="checkInStock()" (click)="Add()">Mua sản phẩm</button>
+        <!--Ẩn đi nút mua sản phẩm nếu số lượng sản phẩm trong cart = số lượng tồn của sản phẩm-->
+        <br>
+    </div>
+    <div class="col-3">
+        <div style="border: 1px solid black;margin-top: 10px;padding: 10px;">
+            <a href="#" style="float: left;">
+                <i class="fas fa-shopping-cart" style="font-size: 50px;"></i>
+            </a>
+            <div class="text-center">
+                Tổng số sản phẩm: {{itemCount}}
+                <br>
+                Tổng tiền :
+                {{ itemSum | currency:'VND':'':'1.0-0'}} VNĐ
+                <br>
+                <button class="btn btn-primary" style="margin-top: 10px;" routerLink="/cart">View Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

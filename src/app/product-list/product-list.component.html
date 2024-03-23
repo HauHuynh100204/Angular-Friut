@@ -1,0 +1,150 @@
+<!-- <app-product-list [productList]="filterProductList"></app-product-list> -->
+<div class="row mt-3 pl-3 pr-3">
+    <!-- Button trigger modal -->
+    <div class="col-md-6">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelId">
+            Thêm Sản Phẩm Mới
+        </button>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Hình sản phẩm
+                </th>
+                <th>Tên sản phẩm</th>
+                <th>Mã số sản phẩm</th>
+                <th>Ngày xuất bán</th>
+                <th>Giá</th>
+                <th>Số lượng tồn (KG)</th>
+                <th>Đánh giá 5 sao</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productList; let i = index">
+                <td scope="row"><img src="{{item.imageUrl}}" width="50px" alt="" srcset=""> </td>
+                <td> <a href="" [routerLink]="['/product-details', item.id]">{{item.productName}}</a></td>
+                <td>{{item.productCode}}</td>
+                <td>{{ item.releaseDate | date:'dd/MM/yyyy' }}</td>
+                <td>{{item.price | currency:'VND':'':'1.0-0'}} VNĐ</td>
+                <td>{{ item.inStock }}</td>
+                <!-- <td>{{item.starRating}}</td> -->
+                <td>
+                    <app-star [Rating]="item.starRating" [nameRating]="item.productName"
+                        (outRating)="showRating($event)"></app-star>
+
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelId"
+                        (click)="Edit(i)" (click)="IsUpdate=2;IsAdd=0">Sửa</button>
+                    <button type="button" class="btn btn-danger" (click)="Delete(i)">Xóa</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Product</h5>
+                <button type="button" class="close ms-auto" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="resetForm()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formProduct">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Tên sản phẩm</label>
+                                <input type="text" [formControl]="formProduct.controls.productName" name="" id=""
+                                    class="form-control" placeholder="" ariadescribedby="helpId" required>
+                                <!--<small id="helpId" class="text-muted">Help
+    text</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Mã số sản phẩm</label>
+                                <input type="text" [formControl]="formProduct.controls.productCode" name="" id=""
+                                    class="form-control" placeholder="" ariadescribedby="helpId" required>
+                                <!--<small id="helpId" class="text-muted">Help
+    text</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Ngày xuất bán</label>
+                                <input type="date" [formControl]="formProduct.controls.releaseDate" name="" id=""
+                                    class="form-control" placeholder="" ariadescribedby="helpId" required>
+                                <!--<small id="helpId" class="text-muted">Help
+                                text</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Giá sản phẩm</label>
+                                <input type="number" [formControl]="formProduct.controls.price" min="0" name="" id=""
+                                    class="form-control" placeholder="" ariadescribedby="helpId" required>
+                                <!--<small id="helpId" class="text-muted">Help
+                                text</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Số lượng tồn (KG)</label>
+                                <input type="number" [formControl]="formProduct.controls.inStock" min="0.1" max="5"
+                                    name="" id="" class="form-control" placeholder="" ariadescribedby="helpId" required>
+                                <!--<small id="helpId" class="text-muted">Help
+                                text</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Đánh giá 5 sao</label>
+                                <input type="number" [formControl]="formProduct.controls.starRating" min="0.1" max="5"
+                                    name="" id="" class="form-control" placeholder="" ariadescribedby="helpId" required>
+                                <!--<small id="helpId" class="text-muted">Help
+                                text</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Mô tả</label>
+                                <input type="text" [formControl]="formProduct.controls.description" name="" id=""
+                                    class="form-control" placeholder="" ariadescribedby="helpId" required>
+                                <!--<small id="helpId" class="text-muted">Help
+                                text</small>-->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">File hình sản phẩm</label>
+                                <input type="file" (change)="onChange($event)" name="" id="" class="formcontrol"
+                                    placeholder="" aria-describedby="helpId">
+                                <!--<small id="helpId" class="text-muted">Help
+                                text</small>-->
+                                <input type="hidden" name="" [formControl]="formProduct.controls.imageUrl">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img [src]="file" width="20%" alt="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" *ngIf="IsAdd==1" (click)="Add()">Lưu</button>
+                <button type="button" class="btn btn-primary" *ngIf="IsUpdate==2" (click)="Update()"
+                    (click)="IsAdd=1;IsUpdate=0">Save</button>
+                <button type="button" class="btn btn-secondary" (click)="IsAdd=1;IsUpdate=0" data-bs-dismiss="modal"
+                    (click)="resetForm()">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
